@@ -242,6 +242,7 @@ function vitePluginContactApi(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginContactApi()];
 
 export default defineConfig({
+  base: process.env.VITE_BASE || "/",
   plugins,
   resolve: {
     alias: {
