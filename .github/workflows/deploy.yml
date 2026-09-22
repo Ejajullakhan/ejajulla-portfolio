@@ -40,6 +40,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build frontend
+        env:
+          VITE_BASE: /ejajulla-portfolio/
         run: pnpm exec vite build
 
       - name: Setup GitHub Pages
@@ -48,7 +50,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./dist/public
 
       - name: Deploy
         id: deployment
